@@ -8,9 +8,10 @@ use strict;
 use vars qw( $VERSION $RELEASE $dbinfo $SHORTDESCRIPTION );
 use Foswiki::Plugins::DatabasePlugin::Connection;
 
-$VERSION          = '$Rev$';
-$RELEASE          = '2.2';
-$SHORTDESCRIPTION = 'Provide access to data in a SQL database';
+our $VERSION          = '2.2';
+our $RELEASE          = '02 Nov 2016';
+our $SHORTDESCRIPTION = 'Provide access to data in a SQL database';
+our $NO_PREFS_IN_TOPIC = 1;
 
 sub initPlugin {
     my ( $topic, $web, $user, $installWeb ) = @_;
