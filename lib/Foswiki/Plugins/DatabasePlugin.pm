@@ -9,7 +9,7 @@ use vars qw( $VERSION $RELEASE $dbinfo $SHORTDESCRIPTION );
 use Foswiki::Plugins::DatabasePlugin::Connection;
 
 $VERSION          = '$Rev$';
-$RELEASE          = '2.1';
+$RELEASE          = '2.2';
 $SHORTDESCRIPTION = 'Provide access to data in a SQL database';
 
 sub initPlugin {
@@ -47,7 +47,7 @@ sub initPlugin {
 "DBI:$Foswiki::cfg{Plugins}{DatabasePlugin}{ConfigDriver}:database=$Foswiki::cfg{Plugins}{DatabasePlugin}{ConfigDB};host=$Foswiki::cfg{Plugins}{DatabasePlugin}{ConfigHost}$sid",
             $Foswiki::cfg{Plugins}{DatabasePlugin}{ConfigUsername},
             $Foswiki::cfg{Plugins}{DatabasePlugin}{ConfigPassword},
-            { PrintError => 1, RaiseError => 0 }
+            { PrintError => 1, RaiseError => 0, mysql_enable_utf8 => 1 }
         );
         if ( !$db ) {
             die "Can't open initialization database";
