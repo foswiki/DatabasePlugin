@@ -35,7 +35,7 @@ sub connect {
 "DBI:$this->{driver}:database=$this->{database};host=$this->{hostname}$sid",
             $this->{username},
             $this->{password},
-            { PrintError => 1, RaiseError => 1 }
+            { PrintError => 1, RaiseError => 1, mysql_enable_utf8 => 1 }
         );
         if ( !$db ) {
             die "Can't open database specified by description '$description'";
